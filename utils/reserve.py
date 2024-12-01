@@ -199,7 +199,8 @@ class reserve:
     def submit(self, times, roomid, seatid, action):
         for seat in seatid:
             suc = False
-            while ~suc and self.max_attempt > 0:
+            att=self.max_attempt
+            while ~suc and  att > 0:
                 token = self._get_page_token(self.url.format(roomid, seat))
                 logging.info(f"Get token: {token}")
                 captcha = self.resolve_captcha() if self.enable_slider else "" 
@@ -208,7 +209,7 @@ class reserve:
                 if suc:
                     return suc
                 time.sleep(self.sleep_time)
-                self.max_attempt -= 1
+                att -= 1
         return suc
 
     def get_submit(self, url, times, token, roomid, seatid, captcha="", action=False):
