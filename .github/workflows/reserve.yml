@@ -10,7 +10,7 @@ env:
 # or API.
 on:
   schedule:
-    - cron: "50 22 * * 0,1,2,3,4,5,6" # 周一到周五每天早上5:59启动（防止github action过于高负载）
+    - cron: "50 22 * * 0" # 周一到周五每天早上5:59启动（防止github action过于高负载）
   workflow_dispatch:
 
 # 🌟 新增：并发组，确保同一时间只有一个任务运行
