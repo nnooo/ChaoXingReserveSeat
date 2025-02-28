@@ -17,7 +17,7 @@ SLEEPTIME = 0.2 # 每次抢座的间隔
 ENDTIME = "23:20:00"
 
 ENABLE_SLIDER = False # 是否有滑块验证
-MAX_ATTEMPT = 5 # 最大尝试次数
+MAX_ATTEMPT = 2 # 最大尝试次数
 RESERVE_NEXT_DAY = False # 预约明天而不是今天的
 
                 
